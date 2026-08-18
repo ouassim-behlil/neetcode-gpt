@@ -8,8 +8,10 @@ class Solution:
         # z is a 1D NumPy array
         # Formula: 1 / (1 + e^(-z))
         # return np.round(your_answer, 5)
-        result = 1 / (1 + np.exp(-z))
-        return list(map(lambda x: round(x, 5), result))
+        return [
+            round(1 / (1 + np.exp(-x)), 5)
+            for x in z
+        ]
 
     def relu(self, z: NDArray[np.float64]) -> NDArray[np.float64]:
         # z is a 1D NumPy array
